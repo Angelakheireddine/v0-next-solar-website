@@ -112,7 +112,7 @@ export default function Home() {
       date: 'September 26, 2023',
       title: 'K2 Systems Partnership',
       description: 'Strategic distribution agreement with K2 Systems for premium solar mounting structures.',
-      image: '/k2-ceremony.jpg',
+      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/k2%20systems%20event-YdygkpXzMyN4hcPf0Nacd7tDx9BvA3.png',
     },
     {
       date: 'November 18, 2024',
@@ -385,7 +385,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Next Solar Repair Center
+              Next Solar Repai
             </h2>
           </div>
 
