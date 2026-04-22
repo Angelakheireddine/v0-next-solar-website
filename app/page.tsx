@@ -8,6 +8,10 @@ import { Card, CardContent } from '@/components/ui/card';
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const navigationItems = [
     { label: 'Home', href: '#home' },
@@ -541,41 +545,85 @@ export default function Home() {
 
             <Card className="border-0 shadow-2xl">
               <CardContent className="p-8 bg-white">
-                <form action="https://formspree.io/f/xvgzydog" method="POST" className="space-y-4">
-                  <div>
-                    <label className="block text-gray-900 font-semibold mb-2">Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
-                      placeholder="Your name"
-                      required
-                    />
+                {submitted ? (
+                  <div className="text-center py-8">
+                    <p className="text-green-600 font-semibold text-lg">Thank you for your message!</p>
+                    <p className="text-gray-600 mt-2">We&apos;ll get back to you soon at {formData.email}</p>
+                    <button 
+                      onClick={() => {
+                        setSubmitted(false);
+                        setFormData({ name: '', email: '', message: '' });
+                      }}
+                      className="mt-4 text-orange-500 hover:text-orange-600 font-semibold"
+                    >
+                      Send another message
+                    </button>
                   </div>
-                  <div>
-                    <label className="block text-gray-900 font-semibold mb-2">Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
-                      placeholder="your@email.com"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-900 font-semibold mb-2">Message</label>
-                    <textarea
-                      rows={4}
-                      name="message"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
-                      placeholder="Tell us about your project..."
-                      required
-                    />
-                  </div>
-                  <button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white text-lg py-6 rounded-lg font-semibold">
-                    Send Message
-                  </button>
-                </form>
+                ) : (
+                  <form onSubmit={async (e) => {
+                    e.preventDefault();
+                    setLoading(true);
+                    setError('');
+                    try {
+                      const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData),
+                      });
+                      if (response.ok) {
+                        setSubmitted(true);
+                      } else {
+                        setError('Failed to send message. Please try again.');
+                      }
+                    } catch (err) {
+                      setError('An error occurred. Please try again.');
+                    } finally {
+                      setLoading(false);
+                    }
+                  }} className="space-y-4">
+                    <div>
+                      <label className="block text-gray-900 font-semibold mb-2">Name</label>
+                      <input
+                        type="text"
+                        value={formData.name}
+                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                        placeholder="Your name"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-900 font-semibold mb-2">Email</label>
+                      <input
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                        placeholder="your@email.com"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-900 font-semibold mb-2">Message</label>
+                      <textarea
+                        rows={4}
+                        value={formData.message}
+                        onChange={(e) => setFormData({...formData, message: e.target.value})}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                        placeholder="Tell us about your project..."
+                        required
+                      />
+                    </div>
+                    {error && <p className="text-red-600 text-sm">{error}</p>}
+                    <button 
+                      type="submit" 
+                      disabled={loading}
+                      className="w-full bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white text-lg py-6 rounded-lg font-semibold transition"
+                    >
+                      {loading ? 'Sending...' : 'Send Message'}
+                    </button>
+                  </form>
+                )}
               </CardContent>
             </Card>
           </div>
