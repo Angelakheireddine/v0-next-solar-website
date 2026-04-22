@@ -541,34 +541,40 @@ export default function Home() {
 
             <Card className="border-0 shadow-2xl">
               <CardContent className="p-8 bg-white">
-                <form className="space-y-4">
+                <form action="https://formspree.io/f/xvgzydog" method="POST" className="space-y-4">
                   <div>
                     <label className="block text-gray-900 font-semibold mb-2">Name</label>
                     <input
                       type="text"
+                      name="name"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
                       placeholder="Your name"
+                      required
                     />
                   </div>
                   <div>
                     <label className="block text-gray-900 font-semibold mb-2">Email</label>
                     <input
                       type="email"
+                      name="email"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
                       placeholder="your@email.com"
+                      required
                     />
                   </div>
                   <div>
                     <label className="block text-gray-900 font-semibold mb-2">Message</label>
                     <textarea
                       rows={4}
+                      name="message"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
                       placeholder="Tell us about your project..."
+                      required
                     />
                   </div>
-                  <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white text-lg py-6">
+                  <button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white text-lg py-6 rounded-lg font-semibold">
                     Send Message
-                  </Button>
+                  </button>
                 </form>
               </CardContent>
             </Card>
