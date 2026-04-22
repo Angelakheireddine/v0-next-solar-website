@@ -406,7 +406,7 @@ export default function Home() {
             {/* Repair Center Image */}
             <div>
               <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Repair%201-pE1CM9H9SMCruiqfMTY8X2w8oAXpnC.png" 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Repair%201-OXO5sD9I0Qfow3fF0llexT3qhZsKU1.png" 
                 alt="Next Solar Repair Center technician" 
                 className="w-full h-full object-cover rounded-2xl shadow-lg"
               />
