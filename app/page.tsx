@@ -106,7 +106,7 @@ export default function Home() {
       date: 'June 10, 2023',
       title: 'Longi Distribution Agreement',
       description: 'Signed distribution agreement with the world\'s leading solar manufacturer, covering the entire Middle East market.',
-      image: '/longi-ceremony.jpg',
+      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Longi-t44lok27JWypu7gD1WLmv4BZjEkS6t.png',
     },
     {
       date: 'September 26, 2023',
@@ -118,7 +118,7 @@ export default function Home() {
       date: 'November 18, 2024',
       title: 'Astronergy Solar Partnership',
       description: 'Strategic cooperation agreement with global photovoltaic technology leader Astronergy Solar.',
-      image: '/astronergy-ceremony.jpg',
+      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Astronergy-66DatiOTFM7VJjYD4NmBLZmYoh4T69.jpg',
     },
   ];
 
@@ -129,7 +129,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-8">
-              <img src="/next-solar-logo.jpg" alt="Next Solar" className="h-10" />
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/next-logo%20%20%281%29%201-2YbaCw1Z3m6258RNTQ0UglwhiRlPHj.jpg" alt="Next Solar" className="h-10" />
               <div className="hidden md:flex gap-8">
                 {navigationItems.map((item) => (
                   <a
@@ -199,7 +199,7 @@ export default function Home() {
             <div className="relative h-96 md:h-full">
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-300 to-orange-500 rounded-3xl opacity-10 blur-3xl"></div>
               <img 
-                src="/booth.jpg" 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Hero-hMHJwDl8DBZq9CNwPgP2oixzPYfuMu.jpg" 
                 alt="Next Solar Exhibition Booth" 
                 className="w-full h-full object-cover rounded-3xl shadow-xl"
               />
@@ -406,7 +406,7 @@ export default function Home() {
             {/* Repair Center Image */}
             <div>
               <img 
-                src="/repair-center-1-new.jpg" 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Repair%201-pE1CM9H9SMCruiqfMTY8X2w8oAXpnC.png" 
                 alt="Next Solar Repair Center technician" 
                 className="w-full h-full object-cover rounded-2xl shadow-lg"
               />
@@ -417,7 +417,7 @@ export default function Home() {
             {/* Express Service Image */}
             <div>
               <img 
-                src="/repair-center-2.jpg" 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Repair%202-NxMrxLuL2ogmWKIIy7alXDc9e8nG46.png" 
                 alt="Repair Center equipment and facilities" 
                 className="w-full h-full object-cover rounded-2xl shadow-lg"
               />
