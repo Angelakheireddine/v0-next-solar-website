@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - 'v0/**'
-      - 'hui'
+      - '20260424-CHAT'
       - 'image-display-issue'
 
 jobs:
