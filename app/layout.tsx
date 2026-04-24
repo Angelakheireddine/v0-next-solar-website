@@ -8,11 +8,10 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'Next Solar SARL',
-  description: 'Solar Energy Solutions',
-  generator: 'v0.app',
+  description: 'Solar Energy Solutions - Lebanon',
   icons: {
-    icon: '/next-solar-logo.jpg',
-    apple: '/next-solar-logo.jpg',
+    icon: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/next-logo%20%20%281%29%201-2YbaCw1Z3m6258RNTQ0UglwhiRlPHj.jpg',
+    apple: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/next-logo%20%20%281%29%201-2YbaCw1Z3m6258RNTQ0UglwhiRlPHj.jpg',
   },
 }
 
