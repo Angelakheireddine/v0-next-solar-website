@@ -7,25 +7,11 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'Next Solar SARL',
+  description: 'Solar Energy Solutions - Lebanon',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/next-logo%20%20%281%29%201-2YbaCw1Z3m6258RNTQ0UglwhiRlPHj.jpg',
+    apple: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/next-logo%20%20%281%29%201-2YbaCw1Z3m6258RNTQ0UglwhiRlPHj.jpg',
   },
 }
 
