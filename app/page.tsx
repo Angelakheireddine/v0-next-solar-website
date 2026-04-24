@@ -537,6 +537,10 @@ export default function Home() {
                   <p className="opacity-90">+961 1 800 914</p>
                 </div>
                 <div>
+                  <p className="font-semibold mb-1">WhatsApp</p>
+                  <p className="opacity-90">+961 76 362 988</p>
+                </div>
+                <div>
                   <p className="font-semibold mb-1">Location</p>
                   <p className="opacity-90">Verdun, Rashidin Street, Andalus building, 1st floor, Beirut, Lebanon</p>
                 </div>
